@@ -1,0 +1,8 @@
+{
+    "name": "Launcher on device lock",
+    "description": "Allows launcher on device lock with disabled edit mode",
+    "category": "homescreen",
+    "infos": {
+        "maintainer": "AliNa"
+    }
+}
