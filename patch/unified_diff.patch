@@ -1,0 +1,21 @@
+--- /usr/share/lipstick-jolla-home-qt5/compositor.qml
++++ /usr/share/lipstick-jolla-home-qt5/compositor.qml
+@@ -855,6 +855,6 @@
+ 
+                 peekFilter.bottomEnabled: launcherLayerItem.active
+                 edgeFilter {
+-                    enabled: launcherLayer.active || (systemInitComplete && !root.deviceIsLocked
++                    enabled: launcherLayer.active || (systemInitComplete 
+                                 && (homeLayer.active
+                                     || appLayer.active
+--- /usr/share/lipstick-jolla-home-qt5/launcher/LauncherGrid.qml
++++ /usr/share/lipstick-jolla-home-qt5/launcher/LauncherGrid.qml
+@@ -87,6 +87,8 @@
+ 
+     function setEditMode(enabled) {
++      if (deviceLock.state < 1) {
+         gridManager.setEditMode(enabled)
+         removeApplicationEnabled = enabled
++      }
+     }
+ 
